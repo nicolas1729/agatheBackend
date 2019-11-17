@@ -1,0 +1,47 @@
+{
+    "name": "Menu",
+    "fields": [
+        {
+            "fieldName": "nom",
+            "javadoc": "The firstname attribute.",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "infobulle",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "commentaire",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "entree",
+            "otherEntityRelationshipName": "menu",
+            "relationshipName": "entree"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "menu",
+            "otherEntityRelationshipName": "menu",
+            "relationshipName": "manager",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191117213536",
+    "javadoc": "The Employee entity.",
+    "entityTableName": "menu",
+    "dto": "no",
+    "pagination": "infinite-scroll",
+    "service": "no",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

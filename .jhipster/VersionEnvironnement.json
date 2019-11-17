@@ -1,0 +1,42 @@
+{
+    "name": "VersionEnvironnement",
+    "fields": [
+        {
+            "fieldName": "nom",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "datePublication",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "version",
+            "otherEntityRelationshipName": "versionEnvironnement",
+            "relationshipName": "version",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "environnement",
+            "otherEntityRelationshipName": "versionEnvironnement",
+            "relationshipName": "environnement",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191117213528",
+    "entityTableName": "version_environnement",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

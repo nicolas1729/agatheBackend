@@ -1,0 +1,131 @@
+
+
+entity VersionPrivative {
+	nom String required,
+    commentaire String
+}
+
+entity VersionCommunautaire {
+	nom String required,
+    commentaire String
+}
+
+entity Version {
+	nom String required,
+    commentaire String
+}
+
+entity VersionEnvironnement {
+	nom String required,
+    datePublication Instant
+}
+
+entity Environnement {
+	nom String required
+}
+
+entity ServeurPublication {
+	nom String required,
+    path String required,
+    jboss Boolean required
+}
+
+entity Task {
+	nom String required,
+	description String,
+    type TypeTask
+}
+
+entity RBUrl {
+	nom String required,
+	description String,
+    idTask String required,
+    idProcess String required
+}
+
+entity RBExe {
+	nom String required,
+	description String,
+    idTask String required,
+    idProcess String required
+}
+
+entity PF {
+	nom String required,
+	description String,
+    idTask String required,
+    idProcess String required
+}
+
+entity WebApp {
+	nom String required,
+	description String,
+    idTask String required,
+    idProcess String required
+}
+
+/**
+ * The Employee entity.
+ */
+entity Menu {
+	/**
+	* The firstname attribute.
+	*/
+	nom String required,
+	infobulle String,
+	commentaire String
+}
+
+entity Entree {
+	nom String required,
+	infobulle String,
+	commentaire String,
+    description String
+}
+
+enum TypeTask {
+    PF, WebApp, RBurl, RBexe
+}
+
+//relationship ManyToMany {
+	//Entree{task(title)} to Task{entree}
+//}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Menu{entree} to Entree,
+
+}
+
+relationship ManyToOne {
+	Menu{manager} to Menu,
+    Entree{task} to Task,
+    VersionPrivative{menu} to Menu,
+    VersionCommunautaire{menu} to Menu,
+    Version{versionCommunautaire} to VersionCommunautaire,
+    Version{versionPrivative} to VersionPrivative,
+    VersionEnvironnement{version} to Version,
+    VersionEnvironnement{environnement} to Environnement,
+    ServeurPublication{environnement} to Environnement,
+}
+
+// defining multiple oneToOne relationships
+relationship OneToOne {
+    RBUrl{task} to Task,
+    RBExe{task} to Task,
+    PF{task} to Task,
+    WebApp{task} to Task
+}
+
+// Set pagination options
+paginate Menu with infinite-scroll
+paginate Entree with pagination
+
+// Use Data Transfert Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl except Menu, Entree
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

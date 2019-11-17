@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity Version.
+    -->
+    <changeSet id="20191117213527-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="version_communautaire_id"
+                                 baseTableName="version"
+                                 constraintName="fk_version_version_communautaire_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="version_communautaire"/>
+
+        <addForeignKeyConstraint baseColumnNames="version_privative_id"
+                                 baseTableName="version"
+                                 constraintName="fk_version_version_privative_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="version_privative"/>
+
+    </changeSet>
+</databaseChangeLog>

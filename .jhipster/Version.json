@@ -1,0 +1,42 @@
+{
+    "name": "Version",
+    "fields": [
+        {
+            "fieldName": "nom",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "commentaire",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "versionCommunautaire",
+            "otherEntityRelationshipName": "version",
+            "relationshipName": "versionCommunautaire",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "versionPrivative",
+            "otherEntityRelationshipName": "version",
+            "relationshipName": "versionPrivative",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191117213527",
+    "entityTableName": "version",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,32 @@
+{
+    "name": "Task",
+    "fields": [
+        {
+            "fieldName": "nom",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "TypeTask",
+            "fieldValues": "PF,WebApp,RBurl,RBexe"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20191117213531",
+    "entityTableName": "task",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}
