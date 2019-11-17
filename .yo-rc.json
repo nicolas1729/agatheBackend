@@ -1,0 +1,37 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.ibp"
+    },
+    "jhipsterVersion": "6.5.0",
+    "applicationType": "monolith",
+    "baseName": "demoAgathe",
+    "packageName": "com.ibp",
+    "packageFolder": "com/ibp",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": false,
+    "websocket": "spring-websocket",
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": true,
+    "jwtSecretKey": "NTQwMzc4ZWQ3MTMzZmIwNmMwYWYzYzI1OTY0MzQ4MzhjNTRmNDc5ZDdhN2RiNzk4MTA3MTk5YzJmZmVlMzgwYTgwMzg1MjE3Y2E4MDMzNWEyYzc1Y2Q4YzBiMWU3MGQ4NjAzMmZkYzkyZDc5YzdjNGYzYjkyODY5MGZmMTQ0ODM=",
+    "embeddableLaunchScript": false,
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "skipClient": true,
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "blueprints": []
+  }
+}
